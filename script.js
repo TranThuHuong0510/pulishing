@@ -10,3 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
+
+  function toggleNav() {
+    document.getElementById('mainNav').classList.toggle('show');
+    document.querySelector('.header-right').classList.toggle('show');
+  }
