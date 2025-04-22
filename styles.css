@@ -50,7 +50,6 @@ body {
   }
   
   .brand {
-    flex: none;
     font-size: 24px;
     font-weight: bold;
     color: #222;
@@ -84,13 +83,6 @@ body {
     color: #333;
     flex: 1;
     text-align: right;
-  }
-  
-  
-  .search-icon {
-    font-size: 20px;
-    cursor: pointer;
-    color: #333;
   }
   
   
@@ -182,7 +174,11 @@ body {
   }
   
   .img-wrapper {
-    width: 490px; /* Or your desired size */
+    /* max-width: 100%;
+    width: 100%; */
+    height: auto;
+    aspect-ratio: 4 / 5;
+    width: 490px;
     height: 580px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
