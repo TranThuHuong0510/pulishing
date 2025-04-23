@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function getScrollAmount() {
     const product = slider.querySelector('.product');
-    return product ? (product.offsetWidth) / 2 : 150; // Half the width of the product + gap
+    return product ? (product.offsetWidth + 20) / 2 : 150; // Half the width of the product + gap
   }
 
   function checkScrollButtons() {
@@ -41,6 +41,49 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     slider.scrollTo({ left: 0, behavior: 'instant' });
   }, 0);
+
+
+
+  //card
+  const container = document.querySelector('.skin-match-benefits');
+  const wrapper = document.querySelector('.skin-match-benefits-wrapper');
+  let isPaused = false;
+  let delayTimeout;
+
+  function scrollLoop() {
+    if (isPaused) return;
+
+    // Scroll by the width of the first card
+    const firstCard = container.firstElementChild;
+    const cardWidth = firstCard.offsetWidth + 20; // + gap
+
+    container.style.transition = 'transform 1s linear';
+    container.style.transform = `translateX(-${cardWidth}px)`;
+
+    // After transition ends, move first card to end & reset transform
+    setTimeout(() => {
+      container.appendChild(firstCard); // move to end
+      container.style.transition = 'none';
+      container.style.transform = 'translateX(0)';
+    }, 1000); // match 1s transition
+  }
+
+  // Run scroll loop every 2s
+  let interval = setInterval(scrollLoop, 2000);
+
+  // Pause/resume on hover
+  wrapper.addEventListener('mouseenter', () => {
+    isPaused = true;
+    clearInterval(interval);
+    clearTimeout(delayTimeout);
+  });
+
+  wrapper.addEventListener('mouseleave', () => {
+    delayTimeout = setTimeout(() => {
+      isPaused = false;
+      interval = setInterval(scrollLoop, 2000);
+    }, 2000); // delay before resume
+  });
 });
 
 // toggleNav stays outside
