@@ -384,21 +384,34 @@ body {
   .products {
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
     align-items: stretch;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    /* padding: 20px; */
+    /* padding-bottom: 10px; */
+  }
+
+  .products::-webkit-scrollbar {
+    display: none;               /* Chrome, Safari */
   }
   
   .product {
     background: #f0f0f0;
     padding: 15px;
     border-radius: 10px;
-    flex: 1 1 250px;
-    max-width: 240px;
+    /* flex: 1 1 250px; */
+    /* max-width: 240px; */
     max-width: 280px;
     text-align: center;
     transition: transform 0.3s ease;
     will-change: transform;
+    flex: 0 0 30%; 
+    scroll-snap-align: start;
+    /* max-width: unset; */
   }
 
   .product:hover {
@@ -475,9 +488,16 @@ body {
     align-items: flex-start;
     justify-content: center;
     padding-top: 30px;
-    flex: 1 1 100%;
+    /* flex: 1 1 100%; */
     min-height: 200px;
     align-items: center;
+    /* flex: 0 0 auto; 
+    flex: 0 0 40%;*/
+    flex: 0 0 25%;;
+    margin-right: 20px;
+    /* background-color: #e0f7fa; */
+    padding: 15px;
+    box-sizing: border-box;
   }
   .quiz-btn {
     padding: 10px 20px;
@@ -520,6 +540,46 @@ body {
     border: none;
     cursor: pointer;
   }
+
+  .product-slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .products-wrapper {
+    display: flex;
+    align-items: stretch;
+  }
+  
+  .scrollable-wrapper {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+  }
+  
+  .slide-btn {
+    position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  }
+  
+  .slide-btn.left {
+    left: 0;
+  }
+  
+  .slide-btn.right {
+    right: 0;
+  }
+  
+  
   
   .skin-match-heading {
     text-align: center;

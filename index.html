@@ -97,37 +97,65 @@
       </nav>
     </div>
     
-    <div class="products">
-      <div class="product full-bg-product">
-        <div class="overlay-content">
-          Find the perfect fit for you
-          <div class="cart-button-wrapper">
-            <button class="cart-button">Take a quiz</button>
+    <div class="product-slider-container">
+      <div class="products-wrapper">
+        <!-- Full background product (not scrollable, fixed) -->
+        <div class="product full-bg-product">
+          <div class="overlay-content">
+            Find the perfect fit for you
+            <div class="cart-button-wrapper">
+              <button class="cart-button">Take a quiz</button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="product">
-        <p>Multivitamin 18+</p>
-        <img src="images/18plusvitamin.png" alt="Multivitamin 18+">
-        <div class="cart-button-wrapper">
-          <button class="cart-button">Add to cart – $12</button>
-        </div>
-      </div>
-      <div class="product">
-        <p>Postnatal Multivitamin</p>
-        <img src="images/18plusvitamin.png" alt="Postnatal Multivitamin">
-        <div class="cart-button-wrapper">
-          <button class="cart-button">Add to cart – $24</button>
-        </div>
-      </div>
-      <div class="product">
-        <p>Vita-min</p>
-        <img src="images/18plusvitamin.png" alt="Vita-min">
-        <div class="cart-button-wrapper">
-          <button class="cart-button">Add to cart – $45</button>
+    
+        <!-- Scrollable product section -->
+        <div class="scrollable-wrapper">
+          <button id="slide-left" class="slide-btn left" hidden>&lt;</button>
+    
+          <div class="products" id="product-slider">
+            <div class="product">
+              <p>Multivitamin 18+</p>
+              <img src="images/18plusvitamin.png" alt="Multivitamin 18+">
+              <div class="cart-button-wrapper">
+                <button class="cart-button">Add to cart – $12</button>
+              </div>
+            </div>
+            <div class="product">
+              <p>Postnatal Multivitamin</p>
+              <img src="images/18plusvitamin.png" alt="Postnatal Multivitamin">
+              <div class="cart-button-wrapper">
+                <button class="cart-button">Add to cart – $24</button>
+              </div>
+            </div>
+            <div class="product">
+              <p>Vita-min</p>
+              <img src="images/18plusvitamin.png" alt="Vita-min">
+              <div class="cart-button-wrapper">
+                <button class="cart-button">Add to cart – $45</button>
+              </div>
+            </div>
+            <div class="product">
+              <p>Vita-min C</p>
+              <img src="images/18plusvitamin.png" alt="Vita-min C">
+              <div class="cart-button-wrapper">
+                <button class="cart-button">Add to cart – $45</button>
+              </div>
+            </div>
+            <div class="product">
+              <p>Vita-min E</p>
+              <img src="images/18plusvitamin.png" alt="Vita-min C">
+              <div class="cart-button-wrapper">
+                <button class="cart-button">Add to cart – $45</button>
+              </div>
+            </div>
+          </div>
+    
+          <button id="slide-right" class="slide-btn right">&gt;</button>
         </div>
       </div>
     </div>
+    
 
     <h2 class="skin-match-heading">Treat yourself, because you deserve it.</h2>
 
